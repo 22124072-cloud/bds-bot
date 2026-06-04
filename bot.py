@@ -154,11 +154,8 @@ def run_once():
     if not login():
         return
 
-    # Căn giờ: chờ đến đúng lúc tick mới xảy ra
-    secs_left = get_next_tick_secs()
-    if 5 < secs_left < 280:
-        log.info(f"⏳ Còn {secs_left}s đến tick. Chờ tick mới rồi giao dịch...")
-        time.sleep(secs_left + 3)  # +3s buffer chờ giá update
+    # Chạy nhanh, không chờ tick (tiết kiệm quota)
+    # Cron 5 phút đã đủ đồng bộ với tick game 5 phút
 
     properties = get_market_list()
     if not properties:

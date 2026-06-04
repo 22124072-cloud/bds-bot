@@ -162,3 +162,61 @@
 2026-06-04 21:26:20,563 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 2929634, 'have': 2363843}
 2026-06-04 21:26:20,563 [INFO] Danh mục đang giữ: {}
 2026-06-04 21:26:20,563 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:31:25,564 [INFO] --- Tick mới ---
+2026-06-04 21:31:26,211 [INFO] MUA Căn hộ Sunshine City: giá 3,210,006 (giảm 8.3% từ đỉnh 3,500,000)
+2026-06-04 21:31:26,904 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 3210006, 'have': 2363843}
+2026-06-04 21:31:26,904 [INFO] MUA Đất nền Đồng Nai: giá 1,309,950 (giảm 6.4% từ đỉnh 1,400,000)
+2026-06-04 21:31:27,578 [INFO] Kết quả mua: {'ok': True, 'property': 'Đất nền Đồng Nai', 'qty': 1, 'cost': 1309950, 'price': 1309950}
+2026-06-04 21:31:27,578 [INFO] MUA Đất nền Long An: giá 1,795,231 (giảm 14.5% từ đỉnh 2,100,000)
+2026-06-04 21:31:28,209 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 1795231, 'have': 1053893}
+2026-06-04 21:31:28,209 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:31:28,209 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:36:33,212 [INFO] --- Tick mới ---
+2026-06-04 21:36:33,830 [INFO] MUA Căn hộ Sunshine City: giá 3,324,123 (giảm 5.0% từ đỉnh 3,500,000)
+2026-06-04 21:36:34,485 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 3324123, 'have': 1053893}
+2026-06-04 21:36:34,485 [INFO] MUA Đất nền Đồng Nai: giá 1,279,671 (giảm 8.6% từ đỉnh 1,400,000)
+2026-06-04 21:36:35,070 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 1279671, 'have': 1053893}
+2026-06-04 21:36:35,070 [INFO] MUA Đất nền Long An: giá 1,663,100 (giảm 20.8% từ đỉnh 2,100,000)
+2026-06-04 21:36:35,599 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 1663100, 'have': 1053893}
+2026-06-04 21:36:35,599 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:36:35,599 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:41:40,599 [INFO] --- Tick mới ---
+2026-06-04 21:41:41,299 [INFO] MUA Đất nền Long An: giá 1,742,109 (giảm 17.0% từ đỉnh 2,100,000)
+2026-06-04 21:41:41,839 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 21:41:41,839 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:41:41,839 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:46:46,847 [INFO] --- Tick mới ---
+2026-06-04 21:46:47,362 [INFO] MUA Đất nền Long An: giá 1,904,415 (giảm 9.3% từ đỉnh 2,100,000)
+2026-06-04 21:46:48,020 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 21:46:48,020 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:46:48,020 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:51:53,022 [INFO] --- Tick mới ---
+2026-06-04 21:51:53,657 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:51:53,657 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:56:58,659 [INFO] --- Tick mới ---
+2026-06-04 21:56:59,221 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:56:59,221 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 22:02:04,222 [INFO] --- Tick mới ---
+2026-06-04 22:02:04,860 [INFO] MUA Căn hộ Sunshine City: giá 3,245,160 (giảm 7.3% từ đỉnh 3,500,000)
+2026-06-04 22:02:05,448 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 3245160, 'have': 1308733}
+2026-06-04 22:02:05,448 [INFO] MUA Đất nền Bình Dương: giá 2,956,509 (giảm 6.1% từ đỉnh 3,150,000)
+2026-06-04 22:02:05,953 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 2956509, 'have': 1308733}
+2026-06-04 22:02:05,953 [INFO] Danh mục đang giữ: {}
+2026-06-04 22:02:05,953 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 22:07:10,953 [INFO] --- Tick mới ---
+2026-06-04 22:07:11,503 [INFO] MUA Căn hộ Sunshine City: giá 3,269,498 (giảm 6.6% từ đỉnh 3,500,000)
+2026-06-04 22:07:12,067 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 3269498, 'have': 1308733}
+2026-06-04 22:07:12,067 [INFO] MUA Đất nền Bình Dương: giá 2,193,725 (giảm 30.4% từ đỉnh 3,150,000)
+2026-06-04 22:07:12,619 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 2193725, 'have': 1308733}
+2026-06-04 22:07:12,620 [INFO] Danh mục đang giữ: {}
+2026-06-04 22:07:12,620 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 22:12:17,621 [INFO] --- Tick mới ---
+2026-06-04 22:12:18,125 [INFO] MUA Đất nền Bình Dương: giá 2,763,544 (giảm 12.3% từ đỉnh 3,150,000)
+2026-06-04 22:12:18,620 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 22:12:18,620 [INFO] Danh mục đang giữ: {}
+2026-06-04 22:12:18,620 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 22:17:23,621 [INFO] --- Tick mới ---
+2026-06-04 22:17:24,170 [INFO] MUA Căn hộ Sunshine City: giá 2,888,368 (giảm 17.5% từ đỉnh 3,500,000)
+2026-06-04 22:17:24,736 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 22:17:24,736 [INFO] Danh mục đang giữ: {}
+2026-06-04 22:17:24,736 [INFO] Chờ 305s đến tick tiếp theo...
