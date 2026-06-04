@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import time
 import requests
 import logging
 
@@ -9,8 +10,10 @@ import logging
 USERNAME = os.environ.get("BDS_USERNAME", "22124072")
 PASSWORD = os.environ.get("BDS_PASSWORD", "12345")
 
-BUY_DIP_PERCENT  = 5.0   # Mua khi giá giảm X% so với đỉnh gần đây
-SELL_MIN_PROFIT  = 1.0   # Bán khi có lời ít nhất X%
+BUY_DIP_PERCENT      = 3.0   # Mua khi giá giảm X% (giảm xuống để mua nhiều cơ hội hơn)
+SELL_MIN_PROFIT      = 1.5   # Bán khi có lời X% (BULL/NEUTRAL)
+SELL_MIN_PROFIT_BEAR = 0.3   # Bán nhanh khi BEAR (bảo toàn vốn)
+SELL_CUT_LOSS_BEAR   = -3.0  # Cắt lỗ khi BEAR và lỗ X%
 
 # ============ SETUP ============
 BASE_URL   = "https://bdsnl.com/bdstechv2/game/api/market_api.jsp"
@@ -80,29 +83,37 @@ def get_market_list():
         return []
 
 
-def get_events():
+def get_market_status():
     try:
         r = session.get(BASE_URL, params={"action": "market_status"}, timeout=10)
-        d = r.json()
-        return d.get("recent_events") or []
+        return r.json()
     except Exception:
-        return []
+        return {}
 
 
-def find_boom_target(events, properties):
-    boom_names = []
+def find_event_target(events, properties):
+    """Tìm BĐS có sự kiện tích cực (boom/policy/infra với delta > 5%) mới < 60s."""
+    target_names = []
     for ev in events:
-        if ev.get("type") == "boom" and ev.get("secs_ago", 9999) < 60:
-            title = ev.get("title", "")
-            name = title.replace("🔥", "").replace("sốt giá!", "").strip()
-            if name:
-                boom_names.append(name.lower())
-    if not boom_names:
+        if ev.get("secs_ago", 9999) < 60 and ev.get("delta", 0) >= 5.0:
+            ev_type = ev.get("type", "")
+            if ev_type in ("boom", "policy", "infra"):
+                title = ev.get("title", "")
+                # Loại bỏ emoji + từ khóa
+                name = re.sub(r'[^\w\sÀ-ỹ]', '', title).strip()
+                for kw in ["sốt giá", "Chính sách hỗ trợ", "Hạ tầng mới gần", "BĐS mở bán đợt mới"]:
+                    name = name.replace(kw, "").strip()
+                if name and len(name) > 3:
+                    target_names.append((name.lower(), ev.get("delta", 0), ev_type))
+
+    if not target_names:
         return None
+
+    # Tìm BĐS khớp
     for prop in properties:
-        for boom in boom_names:
-            if boom in prop["name"].lower() and prop.get("available", 0) > 0:
-                log.info(f"🔥 Phát hiện sự kiện SOT GIA: {prop['name']}")
+        for name, delta, ev_type in target_names:
+            if name in prop["name"].lower() and prop.get("available", 0) > 0:
+                log.info(f"🔥 Sự kiện {ev_type} (+{delta}%): {prop['name']}")
                 return prop
     return None
 
@@ -125,11 +136,29 @@ def sell_all(pid, qty):
         return None
 
 
+def get_next_tick_secs():
+    try:
+        r = session.get(BASE_URL, params={"action": "tick_prices"}, timeout=10)
+        d = r.json()
+        secs = d.get("next_tick_secs")
+        if secs and 0 < secs < 400:
+            return int(secs)
+    except Exception:
+        pass
+    return 0
+
+
 def run_once():
     log.info("=== BOT BĐS - 1 TICK ===")
 
     if not login():
         return
+
+    # Căn giờ: chờ đến đúng lúc tick mới xảy ra
+    secs_left = get_next_tick_secs()
+    if 5 < secs_left < 280:
+        log.info(f"⏳ Còn {secs_left}s đến tick. Chờ tick mới rồi giao dịch...")
+        time.sleep(secs_left + 3)  # +3s buffer chờ giá update
 
     properties = get_market_list()
     if not properties:
@@ -146,6 +175,19 @@ def run_once():
         if price > 0 and (pid not in peak_prices or price > peak_prices[pid]):
             peak_prices[pid] = price
 
+    # Lấy tâm lý thị trường
+    market = get_market_status()
+    sentiment = market.get("sentiment", "neutral")
+    log.info(f"📊 Thị trường: {sentiment.upper()}")
+
+    # Điều chỉnh ngưỡng theo sentiment
+    if sentiment == "bear":
+        sell_threshold = SELL_MIN_PROFIT_BEAR
+        cut_loss = SELL_CUT_LOSS_BEAR
+    else:
+        sell_threshold = SELL_MIN_PROFIT
+        cut_loss = -999  # Không cắt lỗ khi BULL/NEUTRAL
+
     # === LOGIC BÁN ===
     portfolio = [prop for prop in properties if prop.get("my_qty", 0) > 0]
     for prop in portfolio:
@@ -156,10 +198,13 @@ def run_once():
         qty = int(prop["my_qty"])
         if bought_at > 0:
             profit_pct = (current - bought_at) / bought_at * 100
-            if profit_pct >= SELL_MIN_PROFIT:
-                log.info(f"BÁN {name} x{qty}: giá {current:,.0f} (+{profit_pct:.1f}% | lãi {prop['my_profit']:+,} XU)")
-                result = sell_all(pid, qty)
-                log.info(f"Kết quả: {result}")
+            # Bán khi lãi đủ ngưỡng HOẶC cắt lỗ khi BEAR
+            if profit_pct >= sell_threshold:
+                log.info(f"BÁN LÃI {name} x{qty}: giá {current:,.0f} (+{profit_pct:.1f}% | lãi {prop['my_profit']:+,} XU)")
+                log.info(f"Kết quả: {sell_all(pid, qty)}")
+            elif profit_pct <= cut_loss:
+                log.info(f"⚠️ CẮT LỖ {name} x{qty}: giá {current:,.0f} ({profit_pct:.1f}% | lỗ {prop['my_profit']:+,} XU)")
+                log.info(f"Kết quả: {sell_all(pid, qty)}")
 
     # === LOGIC MUA ===
     properties = get_market_list()
@@ -169,20 +214,24 @@ def run_once():
         log.info(f"💰 Số dư: {balance:,} XU")
 
         bought = False
-        # ƯU TIÊN 1: Mua sốt giá
-        events = get_events()
-        boom_prop = find_boom_target(events, properties)
-        if boom_prop:
-            price = float(boom_prop["price"])
-            available = int(boom_prop.get("available", 0))
-            max_qty = min(int(balance // price), available)
-            if max_qty > 0:
-                log.info(f"🔥 MUA SOT GIA {boom_prop['name']} x{max_qty}: tổng {max_qty*price:,.0f} XU")
-                log.info(f"Kết quả: {buy(str(boom_prop['id']), max_qty)}")
-                bought = True
+        # Nếu BEAR market → không mua, chờ đáy
+        if sentiment == "bear":
+            log.info("🐻 BEAR market - tạm không mua, chờ thị trường ổn định")
+        else:
+            # ƯU TIÊN 1: Mua theo sự kiện tốt (boom/policy/infra)
+            events = market.get("recent_events", [])
+            event_prop = find_event_target(events, properties)
+            if event_prop:
+                price = float(event_prop["price"])
+                available = int(event_prop.get("available", 0))
+                max_qty = min(int(balance // price), available)
+                if max_qty > 0:
+                    log.info(f"🔥 MUA SỰ KIỆN {event_prop['name']} x{max_qty}: tổng {max_qty*price:,.0f} XU")
+                    log.info(f"Kết quả: {buy(str(event_prop['id']), max_qty)}")
+                    bought = True
 
-        # ƯU TIÊN 2: Mua BĐS đang giảm giá
-        if not bought:
+        # ƯU TIÊN 2: Mua BĐS đang giảm giá (chỉ khi không BEAR)
+        if not bought and sentiment != "bear":
             candidates = []
             for prop in properties:
                 pid = str(prop["id"])

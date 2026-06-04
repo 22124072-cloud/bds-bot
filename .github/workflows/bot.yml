@@ -2,7 +2,7 @@ name: BDS Bot
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # Chạy mỗi 5 phút
+    - cron: '*/5 * * * *'   # Chạy mỗi 5 phút (đồng bộ tick)
   workflow_dispatch:        # Cho phép chạy thủ công
 
 permissions:
