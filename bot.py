@@ -2,8 +2,6 @@ import requests
 import re
 import time
 import logging
-import ctypes
-import subprocess
 
 # ============ CẤU HÌNH ============
 USERNAME = "22124072"   # Thay bằng tên đăng nhập của bạn
@@ -164,35 +162,13 @@ def sell_all(pid, qty):
         return None
 
 
-def reload_browser():
-    subprocess.Popen(['powershell', '-command',
-        '$wshell = New-Object -ComObject wscript.shell; '
-        '$wshell.AppActivate("Thị Trường BĐS Ảo"); '
-        'Start-Sleep -Milliseconds 300; '
-        '$wshell.SendKeys("{F5}")'])
-
-
-def show_popup(portfolio, balance):
-    if portfolio:
-        lines = "\n".join([
-            f"  {p['name']} x{p['qty']} | mua@{p['buy']:,} | hiện {p['current']:,} | lãi {p['profit']:+,}"
-            for p in portfolio
-        ])
-        msg = f"💰 Số dư: {balance:,} XU\n\nĐang giữ:\n{lines}"
-    else:
-        msg = f"💰 Số dư: {balance:,} XU\n\nKhông giữ BĐS nào.\nĐang chờ cơ hội mua..."
-    ctypes.windll.user32.MessageBoxW(0, msg, "BDS Bot", 0x40 | 0x1000)
-
-
 def run_bot():
     log.info("=== BOT BĐS ẢO BẮT ĐẦU CHẠY ===")
     log.info(f"Mua khi giảm: {BUY_DIP_PERCENT}% | Bán khi lãi: {SELL_MIN_PROFIT}%")
 
     # Đăng nhập lần đầu
     if not login():
-        ctypes.windll.user32.MessageBoxW(0,
-            "❌ Không đăng nhập được!\nKiểm tra USERNAME/PASSWORD trong bot.py",
-            "BDS Bot", 0x10 | 0x1000)
+        log.error("❌ Không đăng nhập được! Kiểm tra USERNAME/PASSWORD.")
         return
 
     while True:
