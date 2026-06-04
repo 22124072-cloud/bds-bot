@@ -1,0 +1,38 @@
+name: BDS Bot
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # Chạy mỗi 5 phút
+  workflow_dispatch:        # Cho phép chạy thủ công
+
+permissions:
+  contents: write           # Cho phép commit state.json về repo
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run bot
+        env:
+          BDS_USERNAME: ${{ secrets.BDS_USERNAME }}
+          BDS_PASSWORD: ${{ secrets.BDS_PASSWORD }}
+        run: python bot.py
+
+      - name: Save state
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@github.com"
+          git add state.json || true
+          git diff --quiet --cached || git commit -m "update state [skip ci]"
+          git push || true
