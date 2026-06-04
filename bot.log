@@ -1,0 +1,164 @@
+2026-06-04 20:29:07,951 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 20:29:07,953 [INFO] Mua khi giảm: 5.0% | Bán khi tăng: 8.0%
+2026-06-04 20:29:07,953 [INFO] --- Tick mới ---
+2026-06-04 20:29:08,651 [ERROR] Lỗi lấy danh sách: 'list' object has no attribute 'get'
+2026-06-04 20:29:08,651 [WARNING] Không lấy được danh sách BĐS, thử lại sau...
+2026-06-04 20:30:08,657 [INFO] --- Tick mới ---
+2026-06-04 20:30:09,216 [ERROR] Lỗi lấy danh sách: 'list' object has no attribute 'get'
+2026-06-04 20:30:09,217 [WARNING] Không lấy được danh sách BĐS, thử lại sau...
+2026-06-04 20:30:11,962 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 20:30:11,962 [INFO] Mua khi giảm: 5.0% | Bán khi tăng: 8.0%
+2026-06-04 20:30:11,962 [INFO] --- Tick mới ---
+2026-06-04 20:30:12,645 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:30:12,645 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:35:17,646 [INFO] --- Tick mới ---
+2026-06-04 20:35:18,210 [INFO] MUA Đất nền Đồng Nai: giá 1,142,052 (giảm 18.4% từ đỉnh 1,400,000)
+2026-06-04 20:35:18,782 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 20:35:18,784 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:35:18,784 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:40:23,785 [INFO] --- Tick mới ---
+2026-06-04 20:40:24,467 [INFO] MUA Căn hộ Vinhomes Central Park: giá 4,696,816 (giảm 16.1% từ đỉnh 5,600,000)
+2026-06-04 20:40:24,975 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 20:40:24,975 [INFO] MUA Đất nền Bình Dương: giá 915,533 (giảm 9.8% từ đỉnh 1,015,038)
+2026-06-04 20:40:25,535 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 20:40:25,535 [INFO] MUA Đất nền Đồng Nai: giá 1,233,143 (giảm 11.9% từ đỉnh 1,400,000)
+2026-06-04 20:40:26,111 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 20:40:26,111 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:40:26,111 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:43:01,761 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 20:43:01,761 [INFO] Mua khi giảm: 5.0% | Bán khi tăng: 8.0%
+2026-06-04 20:43:01,761 [INFO] --- Tick mới ---
+2026-06-04 20:43:02,281 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:43:25,566 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:45:31,114 [INFO] --- Tick mới ---
+2026-06-04 20:45:31,626 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:45:31,626 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:48:41,570 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 20:48:41,570 [INFO] Mua khi giảm: 5.0% | Bán khi tăng: 8.0%
+2026-06-04 20:48:41,570 [INFO] --- Tick mới ---
+2026-06-04 20:48:42,737 [INFO] BÁN Đất nền Bình Dương: giá 1,339,209 (+46.3% so với mua vào 915,533)
+2026-06-04 20:48:43,299 [INFO] Kết quả bán: {'ok': True, 'property': 'Đất nền Bình Dương', 'qty': 3, 'income': 4017627, 'profit': 1271028, 'sell_price': 1339209}
+2026-06-04 20:48:43,299 [INFO] Danh mục đang giữ: {'6': 'Đất nền Bình Dương x3 @ 915,533'}
+2026-06-04 20:48:50,216 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:50:36,627 [INFO] --- Tick mới ---
+2026-06-04 20:50:37,232 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:50:37,232 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:52:42,725 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 20:52:42,725 [INFO] Mua khi giảm: 5.0% | Bán khi tăng: 8.0%
+2026-06-04 20:52:42,725 [INFO] --- Tick mới ---
+2026-06-04 20:52:43,988 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:52:46,627 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:55:42,233 [INFO] --- Tick mới ---
+2026-06-04 20:55:42,865 [INFO] MUA Căn hộ Vinhomes Central Park: giá 4,946,014 (giảm 11.7% từ đỉnh 5,600,000)
+2026-06-04 20:55:43,386 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 20:55:43,386 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:55:43,386 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 20:57:51,631 [INFO] --- Tick mới ---
+2026-06-04 20:57:52,705 [INFO] Danh mục đang giữ: {}
+2026-06-04 20:57:58,971 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:00:48,391 [INFO] --- Tick mới ---
+2026-06-04 21:00:48,902 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:00:48,902 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:03:03,978 [INFO] --- Tick mới ---
+2026-06-04 21:03:04,995 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:03:09,957 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:05:53,917 [INFO] --- Tick mới ---
+2026-06-04 21:05:54,649 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:05:54,649 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:06:53,326 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 21:06:53,326 [INFO] Mua khi giảm: 5.0% | Bán khi lãi: 1.0%
+2026-06-04 21:06:53,326 [INFO] --- Tick mới ---
+2026-06-04 21:06:54,464 [INFO] Số dư: 4,082,855 XU
+2026-06-04 21:06:54,464 [INFO] Không có BĐS nào đủ điều kiện mua.
+2026-06-04 21:06:55,694 [INFO] Số dư: 4,082,855 XU | Đang giữ: trống
+2026-06-04 21:06:57,446 [INFO] Chờ 201s đến tick tiếp theo...
+2026-06-04 21:09:42,112 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 21:09:42,112 [INFO] Mua khi giảm: 5.0% | Bán khi lãi: 1.0%
+2026-06-04 21:09:42,112 [INFO] --- Tick mới ---
+2026-06-04 21:09:43,222 [INFO] Số dư: 4,082,855 XU
+2026-06-04 21:09:43,768 [INFO] Không có BĐS nào đủ điều kiện mua.
+2026-06-04 21:09:44,832 [INFO] Số dư: 4,082,855 XU | Đang giữ: trống
+2026-06-04 21:09:49,412 [INFO] Chờ 29s đến tick tiếp theo...
+2026-06-04 21:10:18,414 [INFO] --- Tick mới ---
+2026-06-04 21:10:19,660 [INFO] Số dư: 4,082,855 XU
+2026-06-04 21:10:20,271 [INFO] Không có BĐS nào đủ điều kiện mua.
+2026-06-04 21:10:21,296 [INFO] Số dư: 4,082,855 XU | Đang giữ: trống
+2026-06-04 21:10:27,659 [INFO] Chờ 283s đến tick tiếp theo...
+2026-06-04 21:10:59,650 [INFO] --- Tick mới ---
+2026-06-04 21:11:00,299 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:11:00,299 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:15:10,674 [INFO] --- Tick mới ---
+2026-06-04 21:15:12,327 [INFO] Số dư: 4,082,855 XU
+2026-06-04 21:15:12,931 [INFO] MUA Đất nền Đồng Nai x3: giá 1,327,339 | giảm 5.2% | tổng 3,982,017 XU
+2026-06-04 21:15:13,729 [INFO] Kết quả mua: {'ok': True, 'property': 'Đất nền Đồng Nai', 'qty': 3, 'cost': 3982017, 'price': 1327339}
+2026-06-04 21:15:14,777 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:15:14,777 [ERROR] Lỗi: 'qty'
+2026-06-04 21:15:44,781 [INFO] --- Tick mới ---
+2026-06-04 21:15:46,471 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:15:46,471 [ERROR] Lỗi: 'qty'
+2026-06-04 21:16:05,301 [INFO] --- Tick mới ---
+2026-06-04 21:16:05,908 [INFO] MUA Đất nền Đồng Nai: giá 1,327,339 (giảm 5.2% từ đỉnh 1,400,000)
+2026-06-04 21:16:06,446 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 1327339, 'have': 100838}
+2026-06-04 21:16:06,450 [INFO] MUA Đất nền Long An: giá 1,890,930 (giảm 10.0% từ đỉnh 2,100,000)
+2026-06-04 21:16:06,992 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 21:16:06,992 [INFO] MUA Đất nền Bình Dương: giá 2,478,582 (giảm 21.3% từ đỉnh 3,150,000)
+2026-06-04 21:16:07,491 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 21:16:07,491 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:16:07,492 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:16:16,475 [INFO] --- Tick mới ---
+2026-06-04 21:16:18,236 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:16:18,236 [ERROR] Lỗi: 'qty'
+2026-06-04 21:16:48,241 [INFO] --- Tick mới ---
+2026-06-04 21:16:50,220 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:16:50,223 [ERROR] Lỗi: 'qty'
+2026-06-04 21:17:20,223 [INFO] --- Tick mới ---
+2026-06-04 21:17:22,161 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:17:22,164 [ERROR] Lỗi: 'qty'
+2026-06-04 21:17:52,165 [INFO] --- Tick mới ---
+2026-06-04 21:17:54,377 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:17:54,378 [ERROR] Lỗi: 'qty'
+2026-06-04 21:18:24,381 [INFO] --- Tick mới ---
+2026-06-04 21:18:26,409 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:18:26,409 [ERROR] Lỗi: 'qty'
+2026-06-04 21:18:56,418 [INFO] --- Tick mới ---
+2026-06-04 21:18:58,359 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:18:58,363 [ERROR] Lỗi: 'qty'
+2026-06-04 21:19:28,364 [INFO] --- Tick mới ---
+2026-06-04 21:19:30,286 [INFO] Số dư: 100,838 XU | Đang giữ: Đất nền Đồng Naix3
+2026-06-04 21:19:30,295 [ERROR] Lỗi: 'qty'
+2026-06-04 21:20:00,296 [INFO] --- Tick mới ---
+2026-06-04 21:20:00,851 [INFO] BÁN Đất nền Đồng Nai x3: giá 1,400,000 (+5.5% | lãi +217,983 XU)
+2026-06-04 21:20:01,811 [INFO] Kết quả bán: {'ok': True, 'property': 'Đất nền Đồng Nai', 'qty': 3, 'income': 4200000, 'profit': 217983, 'sell_price': 1400000}
+2026-06-04 21:20:03,052 [INFO] Số dư: 4,300,838 XU | Đang giữ: trống
+2026-06-04 21:20:07,545 [INFO] Chờ 287s đến tick tiếp theo...
+2026-06-04 21:21:12,493 [INFO] --- Tick mới ---
+2026-06-04 21:21:13,132 [INFO] MUA Đất nền Bình Dương: giá 2,639,581 (giảm 16.2% từ đỉnh 3,150,000)
+2026-06-04 21:21:13,865 [INFO] Kết quả mua: {'error': 'not_enough_supply', 'available': 0}
+2026-06-04 21:21:13,865 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:21:13,865 [INFO] Chờ 305s đến tick tiếp theo...
+2026-06-04 21:22:19,240 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 21:22:19,240 [INFO] Mua khi giảm: 5.0% | Bán khi lãi: 1.0%
+2026-06-04 21:22:19,734 [ERROR] ❌ Đăng nhập thất bại! Sai username/password?
+2026-06-04 21:22:41,175 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 21:22:41,175 [INFO] Mua khi giảm: 5.0% | Bán khi lãi: 1.0%
+2026-06-04 21:22:41,690 [ERROR] ❌ Đăng nhập thất bại! Sai username/password?
+2026-06-04 21:23:26,689 [INFO] === BOT BĐS ẢO BẮT ĐẦU CHẠY ===
+2026-06-04 21:23:26,689 [INFO] Mua khi giảm: 5.0% | Bán khi lãi: 1.0%
+2026-06-04 21:23:28,365 [INFO] ✅ Đăng nhập thành công! User: 22124072
+2026-06-04 21:23:28,365 [INFO] --- Tick mới ---
+2026-06-04 21:23:28,936 [INFO] Số dư: 4,300,838 XU
+2026-06-04 21:23:29,167 [INFO] Không có BĐS nào đủ điều kiện mua.
+2026-06-04 21:23:29,523 [INFO] Số dư: 4,300,838 XU | Đang giữ: trống
+2026-06-04 21:23:34,291 [INFO] Chờ 80s đến tick tiếp theo...
+2026-06-04 21:24:54,292 [INFO] --- Tick mới ---
+2026-06-04 21:24:55,391 [INFO] Số dư: 4,300,838 XU
+2026-06-04 21:24:55,626 [INFO] Không có BĐS nào đủ điều kiện mua.
+2026-06-04 21:24:56,325 [INFO] Số dư: 4,300,838 XU | Đang giữ: trống
+2026-06-04 21:24:59,850 [INFO] Chờ 296s đến tick tiếp theo...
+2026-06-04 21:26:18,877 [INFO] --- Tick mới ---
+2026-06-04 21:26:19,443 [INFO] MUA Đất nền Long An: giá 1,936,995 (giảm 7.8% từ đỉnh 2,100,000)
+2026-06-04 21:26:20,016 [INFO] Kết quả mua: {'ok': True, 'property': 'Đất nền Long An', 'qty': 1, 'cost': 1936995, 'price': 1936995}
+2026-06-04 21:26:20,016 [INFO] MUA Đất nền Bình Dương: giá 2,929,634 (giảm 7.0% từ đỉnh 3,150,000)
+2026-06-04 21:26:20,563 [INFO] Kết quả mua: {'error': 'not_enough_xu', 'need': 2929634, 'have': 2363843}
+2026-06-04 21:26:20,563 [INFO] Danh mục đang giữ: {}
+2026-06-04 21:26:20,563 [INFO] Chờ 305s đến tick tiếp theo...
