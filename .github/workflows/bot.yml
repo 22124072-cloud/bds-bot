@@ -2,7 +2,7 @@ name: BDS Bot
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # Chạy mỗi 5 phút (đồng bộ tick)
+    - cron: '*/25 * * * *'  # Chạy mỗi 25 phút, mỗi job bao 6 tick = 30 phút (overlap 5p tránh sót)
   workflow_dispatch:        # Cho phép chạy thủ công
 
 permissions:

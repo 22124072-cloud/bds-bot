@@ -264,5 +264,27 @@ def run_once():
     log.info(f"📊 Số dư cuối: {balance:,} XU | Đang giữ: {', '.join(holding) or 'trống'}")
 
 
+def run_loop(num_ticks=6):
+    """Chạy nhiều tick liên tiếp trong cùng 1 job (bù delay cron)."""
+    for i in range(num_ticks):
+        log.info(f"━━━ TICK {i+1}/{num_ticks} ━━━")
+        try:
+            run_once()
+        except Exception as e:
+            log.error(f"Lỗi tick {i+1}: {e}")
+
+        # Chờ đến tick tiếp theo (trừ tick cuối)
+        if i < num_ticks - 1:
+            try:
+                wait = get_next_tick_secs()
+                if wait <= 0:
+                    wait = 300
+                wait += 5
+                log.info(f"⏳ Chờ {wait}s đến tick tiếp theo...")
+                time.sleep(wait)
+            except Exception:
+                time.sleep(300)
+
+
 if __name__ == "__main__":
-    run_once()
+    run_loop(num_ticks=6)  # 6 tick × 5 phút = 30 phút mỗi job
